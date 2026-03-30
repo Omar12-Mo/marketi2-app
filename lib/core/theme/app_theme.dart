@@ -22,9 +22,13 @@ class AppTheme {
 
       //Button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
+        
         style: ElevatedButton.styleFrom(
+          foregroundColor: AppColors.primaryColor,
+          minimumSize: Size(double.infinity, 48),
           backgroundColor: AppColors.lightBlue100,
           shape: RoundedRectangleBorder(
+            
             borderRadius: BorderRadiusGeometry.circular(14),
           ),
           textStyle: medium(color: AppColors.primaryColor, fontsize: 18),
