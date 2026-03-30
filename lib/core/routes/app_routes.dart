@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:testapp/features/onboarding&auth/presentation/screens/on_boarding_1_screen.dart';
-import 'package:testapp/features/onboarding&auth/presentation/screens/on_boarding_2_screen.dart';
-import 'package:testapp/features/onboarding&auth/presentation/screens/on_boarding_3_screen.dart';
+import 'package:testapp/features/onboarding&auth/presentation/screens/on_boarding_view.dart';
+
 
 class Routes {
   static const String intitlRoute = "/";
@@ -20,18 +19,7 @@ class AppRoutes {
             return OnBoarding1Screen();
           },
         );
-      case Routes.onBoarding_2:
-      return  MaterialPageRoute(
-          builder: (_) {
-            return OnBoarding2Screen();
-          },
-        );
-      case Routes.onBoarding_3:
-      return  MaterialPageRoute(
-          builder: (_) {
-            return OnBoarding3Screen();
-          },
-        );
+     
       default:
        return MaterialPageRoute(
           builder: (_) {
