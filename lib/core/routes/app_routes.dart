@@ -1,27 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/core/database/cache/cashe_helper.dart';
+import 'package:testapp/core/services/service_lactor.dart';
 
 import 'package:testapp/features/onboarding&auth/presentation/screens/on_boarding_view.dart';
-
+import 'package:testapp/features/onboarding&auth/presentation/screens/sign_up.dart';
 
 class Routes {
   static const String intitlRoute = "/";
-  static const String onBoarding_1 = "/onBoarding_1";
-  static const String onBoarding_2 = "/onBoarding_2";
-  static const String onBoarding_3 = "/onBoarding_3";
+  static const String signUp = "signUp";
 }
 
 class AppRoutes {
   static Route? generateRoute(RouteSettings routeSetting) {
     switch (routeSetting.name) {
       case Routes.intitlRoute:
-      return  MaterialPageRoute(
+
+        return MaterialPageRoute(
           builder: (_) {
-            return OnBoarding1Screen();
+      final val = sl<CasheHelper>().getdata(key: "isVisited");
+      final contains = sl<CasheHelper>().contaianskey(key: "isVisited");
+      
+      print("isVisited value = $val");
+      print("key exists = $contains");
+      
+      return (val ?? false) ? SignUp() : OnBoarding1Screen();
+    },
+        );
+      case Routes.signUp:
+        return MaterialPageRoute(
+          builder: (_) {
+            return SignUp();
           },
         );
-     
+
       default:
-       return MaterialPageRoute(
+        return MaterialPageRoute(
           builder: (_) {
             return Scaffold(body: Center(child: Text("not found")));
           },

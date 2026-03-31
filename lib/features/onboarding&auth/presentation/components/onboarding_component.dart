@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:testapp/core/common/custom_app_button.dart';
+import 'package:testapp/core/database/cache/cashe_helper.dart';
+import 'package:testapp/core/routes/app_routes.dart';
+import 'package:testapp/core/services/service_lactor.dart';
 
 import 'package:testapp/features/onboarding&auth/data/models/page_view_model.dart';
 import 'package:testapp/features/onboarding&auth/presentation/components/smoth_page_indicator.dart';
@@ -41,22 +44,22 @@ class PageViewComponent extends StatelessWidget {
           SubTittle(pageViewModel: pageViewModel),
           Spacer(),
           CustomButton(
-            onPressed: () {
-              pageController.nextPage(
-                duration: Duration(milliseconds: 300),
-                curve: Curves.easeInOut,
-              );
+            onPressed: () async{
+              if (index == 2){
+              await  sl<CasheHelper>().savedata(key: "isVisited", value: true);
+                Navigator.pushNamed(context, Routes.signUp);
+              } else {
+                pageController.nextPage(
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                );
+              }
             },
             text: index == 2 ? "Get start" : "Next",
           ),
-          SizedBox(height: 40,)
+          SizedBox(height: 40),
         ],
       ),
     );
   }
 }
-
-
-
-
-
