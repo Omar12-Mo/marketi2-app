@@ -100,6 +100,7 @@ class Assets {
   static const String itemsToshibaLogo = 'assets/images/items/TOSHIBA_Logo.png';
   static const String itemsTwonTeamLogo = 'assets/images/items/Twon_Team_Logo.png';
   static const String logeLogeSplach12andriod = 'assets/images/loge/loge_splach_+12andriod.png';
+  static const String logeLogoLogIn = 'assets/images/loge/Logo_Log_In.png';
   static const String logeLogoOverlyRate = 'assets/images/loge/Logo_Overly_Rate.png';
   static const String logeLogoSplashScreen = 'assets/images/loge/Logo_Splash_Screen.png';
 }
