@@ -47,7 +47,7 @@ class PageViewComponent extends StatelessWidget {
             onPressed: () async{
               if (index == 2){
               await  sl<CasheHelper>().savedata(key: "isVisited", value: true);
-                Navigator.pushNamed(context, Routes.signUp);
+                Navigator.pushNamed(context, Routes.signIn);
               } else {
                 pageController.nextPage(
                   duration: Duration(milliseconds: 300),

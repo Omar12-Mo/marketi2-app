@@ -3,11 +3,13 @@ import 'package:testapp/core/database/cache/cashe_helper.dart';
 import 'package:testapp/core/services/service_lactor.dart';
 
 import 'package:testapp/features/onboarding&auth/presentation/screens/on_boarding_view.dart';
-import 'package:testapp/features/onboarding&auth/presentation/screens/sign_up.dart';
+import 'package:testapp/features/onboarding&auth/presentation/screens/sign_in_view.dart';
+import 'package:testapp/features/onboarding&auth/presentation/screens/sign_up_view.dart';
 
 class Routes {
   static const String intitlRoute = "/";
   static const String signUp = "signUp";
+  static const String signIn = "signIn";
 }
 
 class AppRoutes {
@@ -23,7 +25,7 @@ class AppRoutes {
       print("isVisited value = $val");
       print("key exists = $contains");
       
-      return (val ?? false) ? SignUp() : OnBoarding1Screen();
+      return (val ?? false) ? SignInView() : OnBoarding1Screen();
     },
         );
       case Routes.signUp:
