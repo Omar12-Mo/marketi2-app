@@ -20,6 +20,7 @@ class Assets {
   static const String iconsArrowIcon = 'assets/images/icons/Arrow_Icon.png';
   static const String iconsArrowSelect = 'assets/images/icons/Arrow_Select.png';
   static const String iconsBackarrowIconUia = 'assets/images/icons/BackArrow_Icon_UIA.png';
+  static const String iconsBackIcon = 'assets/images/icons/Back_Icon.png';
   static const String iconsBagIconUia = 'assets/images/icons/Bag_Icon_UIA.png';
   static const String iconsBellIconUia = 'assets/images/icons/Bell_Icon_UIA.png';
   static const String iconsCameraIcon = 'assets/images/icons/Camera_Icon.png';
@@ -102,5 +103,6 @@ class Assets {
   static const String logeLogeSplach12andriod = 'assets/images/loge/loge_splach_+12andriod.png';
   static const String logeLogoLogIn = 'assets/images/loge/Logo_Log_In.png';
   static const String logeLogoOverlyRate = 'assets/images/loge/Logo_Overly_Rate.png';
+  static const String logeLogoSignUp = 'assets/images/loge/Logo_Sign_Up.png';
   static const String logeLogoSplashScreen = 'assets/images/loge/Logo_Splash_Screen.png';
 }

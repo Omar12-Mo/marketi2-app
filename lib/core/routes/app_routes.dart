@@ -34,6 +34,12 @@ class AppRoutes {
             return SignUp();
           },
         );
+      case Routes.signIn:
+        return MaterialPageRoute(
+          builder: (_) {
+            return SignInView();
+          },
+        );
 
       default:
         return MaterialPageRoute(

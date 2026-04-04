@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+
+import 'package:testapp/features/onboarding&auth/presentation/components/login_form.dart';
 import 'package:testapp/generated/assets.dart';
 
 class SignInView extends StatelessWidget {
@@ -7,14 +10,19 @@ class SignInView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(height: 50),
-            Image.asset(Assets.logeLogoLogIn),
-            SizedBox(height: 32,),
-            
-          ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 22),
+            child: Column(
+              children: [
+                Gap(50),
+                Image.asset(Assets.logeLogoLogIn),
+                Gap(32),
+                LoginForm(),
+              ],
+            ),
+          ),
         ),
       ),
     );
