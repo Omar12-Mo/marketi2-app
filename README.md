@@ -25,7 +25,9 @@ A 3-step illustrated walkthrough introducing the app to new users:
 
 Each step includes a "Next" CTA button and a "Get Started" button on the final step.
 
-### 1.3 Log In
+### 1.<img width="1080" height="2280" alt="Screenshot_1775172547" src="https://github.com/user-attachments/assets/b0878117-00ff-4f3a-85f2-bb58212c94ee" />
+3 Log In
+
 - Email and password fields
 - Social login options: Google, Apple, Facebook
 - "Forgot Password" link
