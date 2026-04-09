@@ -18,11 +18,12 @@ class LoginForm extends StatelessWidget {
       child: Column(
         children: [
           CustomTextFormFiled(
+            textEditingController: TextEditingController(),
             prefixIcon: Image.asset(Assets.iconsEmailIcon),
             hint: "Username or Email",
           ),
           SizedBox(height: 14),
-          CustomTextFormFiled(hint: "Password", isPassword: true),
+          CustomTextFormFiled(textEditingController: TextEditingController() ,hint: "Password", isPassword: true),
           SizedBox(height: 6),
           Row(
             mainAxisSize: MainAxisSize.min,
@@ -35,9 +36,12 @@ class LoginForm extends StatelessWidget {
               ),
 
               Spacer(),
-              Text(
-                "Forgot Password?",
-                style: medium(color: AppColors.lightBlue100, fontsize: 12),
+              GestureDetector(
+                 onTap: () => Navigator.pushNamed(context, Routes.forgetPassword),
+                child: Text(
+                  "Forgot Password?",
+                  style: medium(color: AppColors.lightBlue100, fontsize: 12),
+                ),
               ),
             ],
           ),

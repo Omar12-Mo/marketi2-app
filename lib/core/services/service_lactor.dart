@@ -1,13 +1,18 @@
 import 'package:dio/dio.dart';
+
 import 'package:get_it/get_it.dart';
 import 'package:testapp/core/database/api/api_consumer.dart';
 import 'package:testapp/core/database/api/dio_consumer.dart';
 import 'package:testapp/core/database/cache/cashe_helper.dart';
+import 'package:testapp/features/onboarding&auth/data/repository/auth_repository.dart';
+import 'package:testapp/features/onboarding&auth/presentation/cubit/login_cubit.dart';
 
 final sl = GetIt.instance;
 
 void initServiceLactor() {
   sl.registerLazySingleton<CasheHelper>(() => CasheHelper());
-  sl.registerLazySingleton( ()=>Dio());
+  sl.registerLazySingleton(() => Dio());
+  sl.registerLazySingleton(() => AuthRepository());
+  sl.registerLazySingleton(() => LoginCubit(authRepository: sl()));
   sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(sl()));
 }

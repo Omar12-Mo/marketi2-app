@@ -1,6 +1,6 @@
 class EndPoints {
   //base Url
-  static const String baseUrl = "https://supermarket-dan1.onrender.com/api/v1";
+  static const String baseUrl = "https://marketi-api.onrender.com";
   //auth
   static const String signUp = "/auth/signUp";
   static const String signIn = "/auth/signIn";

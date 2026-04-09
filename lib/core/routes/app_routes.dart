@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/core/database/cache/cashe_helper.dart';
 import 'package:testapp/core/services/service_lactor.dart';
+import 'package:testapp/features/onboarding&auth/presentation/screens/forget_password.dart';
 
 import 'package:testapp/features/onboarding&auth/presentation/screens/on_boarding_view.dart';
 import 'package:testapp/features/onboarding&auth/presentation/screens/sign_in_view.dart';
@@ -10,6 +11,7 @@ class Routes {
   static const String intitlRoute = "/";
   static const String signUp = "signUp";
   static const String signIn = "signIn";
+  static const String forgetPassword = "forgetPassword";
 }
 
 class AppRoutes {
@@ -38,6 +40,13 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (_) {
             return SignInView();
+          },
+        );
+
+        case Routes.forgetPassword:
+        return MaterialPageRoute(
+          builder: (_) {
+            return ForgetPassword();
           },
         );
 
