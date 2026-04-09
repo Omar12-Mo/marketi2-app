@@ -105,4 +105,5 @@ class Assets {
   static const String logeLogoOverlyRate = 'assets/images/loge/Logo_Overly_Rate.png';
   static const String logeLogoSignUp = 'assets/images/loge/Logo_Sign_Up.png';
   static const String logeLogoSplashScreen = 'assets/images/loge/Logo_Splash_Screen.png';
+  static const String logeUserProfile = 'assets/images/loge/user_profile.jpg';
 }
