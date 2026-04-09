@@ -20,4 +20,28 @@ class AuthRepository {
       return Left(e.errorModel.errorMessage);
     }
   }
+
+  Future<Either<String, String>> signUp({
+    required String name,
+    required String phone,
+    required String email,
+    required String password,
+    required String confirmPassword,
+  }) async {
+    try {
+      var response = await sl<ApiConsumer>().post(
+        EndPoints.baseUrl + EndPoints.signUp,
+        data: {
+          "name": name,
+          "phone": phone,
+          "email": email,
+          "password": password,
+          "confirmPassword": confirmPassword,
+        },
+      );
+      return Right(response["message"]);
+    } on ServerExceptions catch (error) {
+      return Left(error.errorModel.errorMessage);
+    }
+  }
 }

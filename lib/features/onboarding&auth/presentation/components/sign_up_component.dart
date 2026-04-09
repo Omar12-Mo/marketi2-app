@@ -9,12 +9,14 @@ class SignUpComponent extends StatelessWidget {
     super.key,
     required this.label,
     required this.hint,
-    required this.prefix, this.isPassword=false,
+    required this.prefix,
+    this.isPassword = false, required this.textEditingController,
   });
   final String label;
   final String hint;
   final String prefix;
   final bool isPassword;
+  final TextEditingController textEditingController;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,7 +30,12 @@ class SignUpComponent extends StatelessWidget {
           ],
         ),
         Gap(2),
-        CustomTextFormFiled( textEditingController: TextEditingController(),hint: hint, prefixIcon: Image.asset(prefix), isPassword: isPassword,),
+        CustomTextFormFiled(
+          textEditingController: textEditingController,
+          hint: hint,
+          prefixIcon: Image.asset(prefix),
+          isPassword: isPassword,
+        ),
         Gap(4),
       ],
     );

@@ -8,7 +8,8 @@ class CustomTextFormFiled extends StatefulWidget {
     this.prefixIcon,
     required this.hint,
     this.label,
-    required this.textEditingController, this.validator,
+    required this.textEditingController,
+    this.validator,
   });
   final String? label;
   final bool isPassword;
@@ -26,7 +27,11 @@ class _CustomTextFormFiledState extends State<CustomTextFormFiled> {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: widget.textEditingController,
-      validator:widget.validator,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "filled is required";
+        }
+      },
       obscureText: widget.isPassword ? obscureText : false,
       decoration: InputDecoration(
         labelText: widget.label,

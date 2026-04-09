@@ -93,47 +93,70 @@ class DioConsumer extends ApiConsumer {
 
       return response.data;
     } on DioException catch (e) {
-      handleException(e);
+       handleException(e);
+      rethrow;
     }
   }
 }
 
-
 //handle exception method
 void handleException(DioException e) {
+  final data = e.response?.data;
+
   switch (e.type) {
     case DioExceptionType.badCertificate:
-      throw BadCertificateException(ErrorModel.fromjson(e.response!.data));
+      throw BadCertificateException(
+        data != null
+            ? ErrorModel.fromjson(data)
+            : ErrorModel(errorMessage: "Bad Certificate", statusCode: 500),
+      );
 
     case DioExceptionType.connectionTimeout:
-      throw ConnectionTimeoutException(ErrorModel.fromjson(e.response!.data));
+      throw ConnectionTimeoutException(
+        ErrorModel(errorMessage: "Connection Timeout", statusCode: 408),
+      );
+
     case DioExceptionType.receiveTimeout:
     case DioExceptionType.sendTimeout:
     case DioExceptionType.connectionError:
-      throw ServerExceptions(ErrorModel.fromjson(e.response!.data));
+      throw ServerExceptions(
+        ErrorModel(errorMessage: "Connection Error", statusCode: 500),
+      );
+
     case DioExceptionType.unknown:
     case DioExceptionType.cancel:
       throw ServerExceptions(
-        ErrorModel(errorMessage: "not found", statusCode: 500),
+        ErrorModel(errorMessage: "Unknown Error", statusCode: 500),
       );
+
     case DioExceptionType.badResponse:
-      switch (e.response!.statusCode) {
-        case 400: //bad request
-          throw BadRequestException(ErrorModel.fromjson(e.response!.data));
+      final statusCode = e.response?.statusCode;
 
-        case 401: //unauthorized
-          throw UnauthorizedException(ErrorModel.fromjson(e.response!.data));
+      switch (statusCode) {
+        case 400:
+          throw BadRequestException(ErrorModel.fromjson(data));
 
-        case 403: //forbidden
-          throw ForbiddenException(ErrorModel.fromjson(e.response!.data));
+        case 401:
+          throw UnauthorizedException(ErrorModel.fromjson(data));
 
-        case 404: //notFound
-          throw NotFoundException(ErrorModel.fromjson(e.response!.data));
+        case 403:
+          throw ForbiddenException(ErrorModel.fromjson(data));
 
-        case 409: //conflict
-          throw ConflictException(ErrorModel.fromjson(e.response!.data));
+        case 404:
+          throw NotFoundException(ErrorModel.fromjson(data));
+
+        case 409:
+          throw ConflictException(ErrorModel.fromjson(data));
+
         case 504:
-          throw BadRequestException(ErrorModel.fromjson(e.response!.data));
+          throw ServerExceptions(
+            ErrorModel(errorMessage: "Gateway Timeout", statusCode: 504),
+          );
+
+        default:
+          throw ServerExceptions(
+            ErrorModel(errorMessage: "Server Error", statusCode: statusCode ?? 500),
+          );
       }
   }
 }

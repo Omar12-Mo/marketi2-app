@@ -13,6 +13,6 @@ void initServiceLactor() {
   sl.registerLazySingleton<CasheHelper>(() => CasheHelper());
   sl.registerLazySingleton(() => Dio());
   sl.registerLazySingleton(() => AuthRepository());
-  sl.registerLazySingleton(() => LoginCubit(authRepository: sl()));
+  
   sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(sl()));
 }

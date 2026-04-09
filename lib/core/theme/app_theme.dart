@@ -68,6 +68,14 @@ class AppTheme {
             color: AppColors.darkRed200.withValues(alpha: 0.7),
           ),
         ),
+
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            width: 2,
+            color: AppColors.darkRed200.withValues(alpha: 0.7),
+          ),
+        ),
       ),
     );
   }
