@@ -40,6 +40,10 @@ Marketi is a mobile e-commerce app that lets users browse products, manage a car
 ## 1. Onboarding & Authentication
 
 ### 1.1 Splash Screen
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2c06986a-2909-4906-a727-2353d9905316" width="280" alt="Log In Screen"/>
+</div>
 Branded launch screen displayed on app open, featuring the Marketi logo.
 
 ### 1.2 Onboarding Flow
@@ -48,8 +52,26 @@ A 3-step illustrated walkthrough introducing the app to new users:
 | Step | Title |
 |------|-------|
 | 1 | Welcome to Marketi |
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b7ab4941-797d-4d24-b726-83242bb54c3e" width="280" alt="Log In Screen"/>
+</div>
+
+
 | 2 | Easy to Buy |
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3c5ccd5a-9c25-4aa9-8003-a81c81433d3e" width="280" alt="Log In Screen"/>
+</div>
+
+
+
 | 3 | Wonderful User Experience |
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/dce1f4ed-9e10-4754-8bba-b0c0fe9687da" width="280" alt="Log In Screen"/>
+</div>
+
 
 Each step includes a **Next** button and a **Get Started** button on the final step.
 
