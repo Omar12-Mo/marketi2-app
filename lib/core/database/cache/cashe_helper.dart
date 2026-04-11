@@ -23,6 +23,10 @@ class CasheHelper {
     return sharedPreferences.getBool(key);
   }
 
+  String? getToken({required String key}) {
+    return sharedPreferences.getString(key);
+  }
+
   Future<bool> removedata({required String key}) async {
     return await sharedPreferences.remove(key);
   }

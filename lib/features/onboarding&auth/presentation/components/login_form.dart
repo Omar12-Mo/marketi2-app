@@ -26,6 +26,10 @@ class LoginForm extends StatelessWidget {
             message: state.loginModel.message,
             state: ToastStates.success,
           );
+           Navigator.pushReplacementNamed(
+                          context,
+                          Routes.homeScreen,
+                        );
         } else if (state is LoginErrorState) {
           ShowToast(message: state.message, state: ToastStates.fail);
         }
@@ -57,10 +61,12 @@ class LoginForm extends StatelessWidget {
                   ? SpinKitFadingCircle(color: AppColors.darkBlue200)
                   : CustomButton(
                       onPressed: () {
-                       if( BlocProvider.of<LoginCubit>(
+                        if (BlocProvider.of<LoginCubit>(
                           context,
-                        ).loginlKey.currentState!.validate()){BlocProvider.of<LoginCubit>(context).logIn();}
-                        
+                        ).loginlKey.currentState!.validate()) {
+                          BlocProvider.of<LoginCubit>(context).logIn();
+                        }
+                       
                       },
                       text: "Log In",
                     ),
