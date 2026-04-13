@@ -13,6 +13,9 @@ class AppTheme {
       //scaffoldBackgroundColor
       scaffoldBackgroundColor: AppColors.primaryColor,
 
+      highlightColor: Colors.transparent,
+      splashColor: Colors.transparent,
+
       //Appbar Theme
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.primaryColor,
@@ -77,6 +80,8 @@ class AppTheme {
           ),
         ),
       ),
+
+     
     );
   }
 

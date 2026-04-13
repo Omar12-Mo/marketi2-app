@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-import 'package:testapp/core/common/custom_app_button.dart';
+import 'package:testapp/core/common/widgets/custom_app_button.dart';
 
 import 'package:testapp/features/onboarding&auth/presentation/components/arrow_back.dart';
 import 'package:testapp/features/onboarding&auth/presentation/components/continue_with.dart';

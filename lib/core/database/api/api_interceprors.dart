@@ -5,7 +5,8 @@ import 'package:testapp/core/services/service_lactor.dart';
 class ApiInterceprors extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers["token"] = sl<CasheHelper>().getToken(key: "token") ?? "";
+    options.headers["Authorization"] =
+        "Bearer ${sl<CasheHelper>().getToken(key: "token")}";
 
     super.onRequest(options, handler);
   }

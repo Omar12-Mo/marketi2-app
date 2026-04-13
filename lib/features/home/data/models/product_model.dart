@@ -9,7 +9,7 @@ class ProductModel {
   final int stock;
   final String brand;
   final String thumbnail;
-  final List<String> images;
+  final List<dynamic> images;
   final String availabilityStatus;
   final String shippingInformation;
   final String returnPolicy;

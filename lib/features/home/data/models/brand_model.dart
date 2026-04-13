@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'package:testapp/generated/assets.dart';
 
 class BrandModel {
   final String name;
@@ -10,3 +10,16 @@ class BrandModel {
     return BrandModel(name: jsondata["name"], emoji: jsondata["emoji"]);
   }
 }
+
+List<String> brandsImages = [
+  Assets.brandsAdidasLogo,
+  Assets.brandsAppleLogo,
+  Assets.brandsCanonLogo,
+  Assets.brandsHpLogo,
+  Assets.brandsJblLogo,
+  Assets.brandsLacosteLogo,
+  Assets.brandsPampersLogo,
+  Assets.brandsSonyLogo,
+  Assets.brandsToshibaLogo,
+  Assets.brandsTwonTeamLogo,
+];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:testapp/app/main_screen.dart';
 import 'package:testapp/core/database/cache/cashe_helper.dart';
 import 'package:testapp/core/services/service_lactor.dart';
 import 'package:testapp/features/home/presentation/screens/home_screen.dart';
@@ -71,6 +72,6 @@ Widget getInitalRoute() {
   } else if (!isLoggedIn) {
     return SignInView();
   } else {
-    return HomeScreen();
+    return MainScreen();
   }
 }

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:gap/gap.dart';
-import 'package:testapp/core/common/custom_app_button.dart';
-import 'package:testapp/core/common/show_toast.dart';
+import 'package:testapp/core/common/widgets/custom_app_button.dart';
+import 'package:testapp/core/common/widgets/show_toast.dart';
+import 'package:testapp/core/common/widgets/spin_loading.dart';
 import 'package:testapp/core/routes/app_routes.dart';
 import 'package:testapp/core/utils/app_colors.dart';
 import 'package:testapp/core/utils/app_text_style.dart';
@@ -58,7 +59,7 @@ class LoginForm extends StatelessWidget {
               RememberMe(),
               SizedBox(height: 5),
               state is LoginLoadingState
-                  ? SpinKitFadingCircle(color: AppColors.darkBlue200)
+                  ? SpinLoading()
                   : CustomButton(
                       onPressed: () {
                         if (BlocProvider.of<LoginCubit>(
@@ -101,3 +102,4 @@ class LoginForm extends StatelessWidget {
     );
   }
 }
+

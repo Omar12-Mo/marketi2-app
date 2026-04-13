@@ -11,7 +11,7 @@ class EndPoints {
   static const String editUserData = "/portfoilo/editUserData";
 
   //home_products
-  static const String getAllProducts = "/home/products?skip=0&limit=10";
+  static const String getPopularProducts = "/home/products?skip=0&limit=10";
   static const String getAllProductsWithSorting = "";
   static const String getSingleProduct = "/home/products/1";
   static String getProductsByCatagory({required String catagory}) {
@@ -23,6 +23,7 @@ class EndPoints {
   }
 
   static const String searchProducts = "/home/productsFilter";
+  static const String getallgategory = "/home/categories";
 }
 
 class ApiKey {

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:testapp/core/database/api/api_consumer.dart';
+import 'package:testapp/core/database/api/api_interceprors.dart';
 import 'package:testapp/core/database/api/end_points.dart';
 import 'package:testapp/core/error/error_model.dart';
 import 'package:testapp/core/error/exceptions.dart';
@@ -9,6 +10,7 @@ class DioConsumer extends ApiConsumer {
 
   DioConsumer(this.dio) {
     dio.options.baseUrl = EndPoints.baseUrl;
+    dio.interceptors.add(ApiInterceprors());
     dio.interceptors.add(
       LogInterceptor(
         request: true,
@@ -93,7 +95,7 @@ class DioConsumer extends ApiConsumer {
 
       return response.data;
     } on DioException catch (e) {
-       handleException(e);
+      handleException(e);
       rethrow;
     }
   }
@@ -155,7 +157,10 @@ void handleException(DioException e) {
 
         default:
           throw ServerExceptions(
-            ErrorModel(errorMessage: "Server Error", statusCode: statusCode ?? 500),
+            ErrorModel(
+              errorMessage: "Server Error",
+              statusCode: statusCode ?? 500,
+            ),
           );
       }
   }

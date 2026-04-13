@@ -14,6 +14,18 @@ class Assets {
   static const String boardingIllustrationSuccessOrder = 'assets/images/boarding/Illustration_Success_Order.png';
   static const String boardingIllustrationVerificationCodeWithEmail = 'assets/images/boarding/Illustration_Verification_Code_With_Email.png';
   static const String boardingIllustrationVerificationCodeWithPhone = 'assets/images/boarding/Illustration_Verification_Code_With_Phone.png';
+  static const String boardingIphone11Pro = 'assets/images/boarding/iPhone_11_Pro.png';
+  static const String boardingOffer1 = 'assets/images/boarding/Offer_1.png';
+  static const String brandsAdidasLogo = 'assets/images/brands/Adidas_Logo.png';
+  static const String brandsAppleLogo = 'assets/images/brands/Apple_Logo.png';
+  static const String brandsCanonLogo = 'assets/images/brands/Canon_Logo.png';
+  static const String brandsHpLogo = 'assets/images/brands/HP_Logo.png';
+  static const String brandsJblLogo = 'assets/images/brands/JBL_Logo.png';
+  static const String brandsLacosteLogo = 'assets/images/brands/LACOSTE_Logo.png';
+  static const String brandsPampersLogo = 'assets/images/brands/Pampers_Logo.png';
+  static const String brandsSonyLogo = 'assets/images/brands/Sony_Logo.png';
+  static const String brandsToshibaLogo = 'assets/images/brands/TOSHIBA_Logo.png';
+  static const String brandsTwonTeamLogo = 'assets/images/brands/Twon_Team_Logo.png';
   static const String fonts = 'assets/fonts/.gitkeep';
   static const String iconsAppleIcon = 'assets/images/icons/Apple_Icon.png';
   static const String iconsAppleIcon1 = 'assets/images/icons/Apple_Icon-1.png';
@@ -46,6 +58,7 @@ class Assets {
   static const String iconsGoogleIcon = 'assets/images/icons/Google_Icon.png';
   static const String iconsGoogleIcon1 = 'assets/images/icons/Google_Icon-1.png';
   static const String iconsHeartIcon = 'assets/images/icons/Heart_Icon.png';
+  static const String iconsHeartIconEmpty = 'assets/images/icons/Heart_Icon_empty.png';
   static const String iconsHomeIconField = 'assets/images/icons/Home_Icon_Field.png';
   static const String iconsLocationIconFill = 'assets/images/icons/Location_Icon_Fill.png';
   static const String iconsLocationIconUia = 'assets/images/icons/Location_Icon_UIA.png';
