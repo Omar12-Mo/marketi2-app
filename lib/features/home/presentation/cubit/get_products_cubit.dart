@@ -22,4 +22,19 @@ class GetProductsCubit extends Cubit<GetProductsState> {
       },
     );
   }
+
+  void getAllProducts() async {
+    emit(GetProductsLoading());
+
+    var result = await sl<HomeRepository>().getAllProducts();
+
+    result.fold(
+      (l) {
+        emit(GetProductserror(messageerror: l));
+      },
+      (r) {
+        emit(GetProductsSuccess(products: r));
+      },
+    );
+  }
 }

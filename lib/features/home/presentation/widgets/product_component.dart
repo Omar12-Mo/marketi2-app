@@ -8,8 +8,14 @@ import 'package:testapp/features/home/presentation/widgets/add-favourite.dart';
 import 'package:testapp/generated/assets.dart';
 
 class ProductComponent extends StatelessWidget {
-  const ProductComponent({super.key, required this.productModel});
+  const ProductComponent({
+    super.key,
+    required this.productModel,
+    required this.inhomeView,
+  });
   final ProductModel productModel;
+
+  final bool inhomeView;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -17,8 +23,8 @@ class ProductComponent extends StatelessWidget {
       shadowColor: AppColors.lightBlue900,
 
       child: Container(
-        width: 160,
-        height: 144,
+        width: inhomeView ? 160 : 164,
+        height: inhomeView ? 144 : 183,
 
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -63,6 +69,25 @@ class ProductComponent extends StatelessWidget {
                         ),
                       ),
                     ),
+                    if (!inhomeView) Center(child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical:  8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          border: Border.all(
+                            color: AppColors.lightBlue100,
+                            width: 1
+                          )
+                        ),
+                        width: 124,
+                        height: 28,
+                        child: Center(
+                          child: Text("Add" , style: medium(color: AppColors.lightBlue100, fontsize: 14),),
+                        ),
+                      ),
+                    ),
+                    
+                    )
                   ],
                 ),
               ),

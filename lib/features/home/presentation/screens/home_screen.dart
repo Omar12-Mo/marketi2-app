@@ -67,6 +67,7 @@ class HomeScreen extends StatelessWidget {
                                 bottom: 8,
                               ),
                               child: ProductComponent(
+                                inhomeView: true,
                                 productModel: state.products[index],
                               ),
                             );

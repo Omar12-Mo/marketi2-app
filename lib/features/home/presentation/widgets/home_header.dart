@@ -15,22 +15,33 @@ class HomeHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CircleAvatar(
-          backgroundColor: AppColors.lightBlue100,
-          radius: 25,
-          child: CircleAvatar(
-            backgroundImage: AssetImage(
-              sl<AppUser>().currentUser?.image ?? Assets.logeUserProfile
-            ),
-            radius: 22,
-          ),
-          
-        ),
+        ProfileAvater(),
         Gap(10),
       Text("hi ${(sl<AppUser>().currentUser?.name) ??"omar" } !"  , style: medium(color: AppColors.textPrimary, fontsize: 20),),
       Spacer(),
       Image.asset(Assets.iconsBellIconUia,height: 28,width: 28,)
       ],
+    );
+  }
+}
+
+class ProfileAvater extends StatelessWidget {
+  const ProfileAvater({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      backgroundColor: AppColors.lightBlue100,
+      radius: 25,
+      child: CircleAvatar(
+        backgroundImage: AssetImage(
+          sl<AppUser>().currentUser?.image ?? Assets.logeUserProfile
+        ),
+        radius: 22,
+      ),
+      
     );
   }
 }

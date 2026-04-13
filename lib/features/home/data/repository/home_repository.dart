@@ -20,6 +20,18 @@ class HomeRepository {
       return left(e.errorModel.errorMessage);
     }
   }
+  Future<Either<String, List<ProductModel>>> getAllProducts() async {
+    try {
+      var result = await sl<ApiConsumer>().get(EndPoints.getProducts(limit: 30));
+      return Right(
+        (result["list"] as List).map((e) {
+          return ProductModel.fromjson(e);
+        }).toList(),
+      );
+    } on ServerExceptions catch (e) {
+      return left(e.errorModel.errorMessage);
+    }
+  }
 
   // get all gategory
 

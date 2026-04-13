@@ -22,6 +22,10 @@ class EndPoints {
     return "/home/products/category/$brand?skip=0&limit=5";
   }
 
+  static String getProducts({required int limit}) {
+    return "/home/products?skip=0&limit=$limit";
+  }
+
   static const String searchProducts = "/home/productsFilter";
   static const String getallgategory = "/home/categories";
 }
