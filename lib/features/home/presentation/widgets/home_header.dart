@@ -4,7 +4,7 @@ import 'package:testapp/core/common/app_user.dart';
 import 'package:testapp/core/services/service_lactor.dart';
 import 'package:testapp/core/utils/app_colors.dart';
 import 'package:testapp/core/utils/app_text_style.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({

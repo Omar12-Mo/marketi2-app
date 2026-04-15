@@ -13,7 +13,7 @@ import 'package:testapp/features/onboarding&auth/presentation/components/custom-
 import 'package:testapp/features/onboarding&auth/presentation/components/custom_check_box.dart';
 import 'package:testapp/features/onboarding&auth/presentation/components/remember_me.dart';
 import 'package:testapp/features/onboarding&auth/presentation/cubit/login_cubit.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});

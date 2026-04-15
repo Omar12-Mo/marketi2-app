@@ -9,7 +9,8 @@ import 'package:testapp/features/home/presentation/widgets/brand_componet.dart';
 import 'package:testapp/features/home/presentation/widgets/custom_search_bar.dart';
 import 'package:testapp/features/home/presentation/widgets/home_header.dart';
 import 'package:testapp/features/home/presentation/widgets/product_component.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
+import 'package:testapp/features/product%20details/presentation/widgets/grid_of_items.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});
@@ -52,23 +53,12 @@ class FavoritesScreen extends StatelessWidget {
                     if (state is GetProductsLoading) {
                       return SpinLoading();
                     } else if (state is GetProductsSuccess) {
-                      return GridView.builder(
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          mainAxisExtent: 200,
-                          crossAxisSpacing: 19,
-                          mainAxisSpacing: 14,
-                        ),
-                        itemCount: state.products.length,
-                        itemBuilder: (context, index) {
-                          return ProductComponent(
-                            productModel: state.products[index],
-                            inhomeView: false,
-                          );
-                        },
-                      );
+                      return GridOfItems(itemCount: state.products.length ,itemBuilder:(context, index) {
+        return ProductComponent(
+          productModel: state.products[index],
+          inhomeView: false,
+        );
+      } ,);
                     } else if (state is GetProductserror) {
                       return Center(child: Text(state.messageerror));
                     } else {
@@ -84,3 +74,4 @@ class FavoritesScreen extends StatelessWidget {
     );
   }
 }
+

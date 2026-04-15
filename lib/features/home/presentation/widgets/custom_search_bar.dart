@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/core/utils/app_colors.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar

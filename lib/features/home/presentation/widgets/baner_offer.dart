@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class BanerOffer extends StatelessWidget {
   const BanerOffer({super.key});

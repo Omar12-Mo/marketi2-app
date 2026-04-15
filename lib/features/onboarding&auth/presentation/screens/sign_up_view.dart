@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:testapp/core/common/widgets/custom_app_button.dart';
+import 'package:testapp/core/routes/app_routes.dart';
 
 import 'package:testapp/features/onboarding&auth/presentation/components/arrow_back.dart';
 import 'package:testapp/features/onboarding&auth/presentation/components/continue_with.dart';
@@ -9,7 +10,7 @@ import 'package:testapp/features/onboarding&auth/presentation/components/continu
 import 'package:testapp/features/onboarding&auth/presentation/components/sign_up_component.dart';
 import 'package:testapp/features/onboarding&auth/presentation/components/signup_form.dart';
 import 'package:testapp/features/onboarding&auth/presentation/cubit/sign_up_cubit.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -26,7 +27,7 @@ class SignUp extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Column(
                   children: [
-                    ArrowBack(),
+                    ArrowBack(onTap:  () => Navigator.popAndPushNamed(context, Routes.signIn),),
                     Image.asset(Assets.logeLogoSignUp, width: 150, height: 120),
 
                     SignUpForm(),

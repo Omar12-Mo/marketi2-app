@@ -3,7 +3,7 @@ import 'package:testapp/core/common/widgets/spin_loading.dart';
 import 'package:testapp/core/utils/app_colors.dart';
 import 'package:testapp/core/utils/app_text_style.dart';
 import 'package:testapp/features/home/data/models/category_model.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class CategoryComponent extends StatelessWidget {
   const CategoryComponent({super.key, required this.categoryModel});

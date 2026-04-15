@@ -16,7 +16,7 @@ class ListOfBrands extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(right: 16.0),
-          child: BrandComponent(image: brandsImages[index]),
+          child: BrandComponent(localBrandModel:  localbrandsModels[index]),
         );
       },
     );

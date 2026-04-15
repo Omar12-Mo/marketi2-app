@@ -1,4 +1,4 @@
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class PageViewModel {
   final String image;

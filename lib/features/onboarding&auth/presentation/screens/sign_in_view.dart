@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 
 import 'package:testapp/features/onboarding&auth/presentation/components/login_form.dart';
 import 'package:testapp/features/onboarding&auth/presentation/cubit/login_cubit.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});

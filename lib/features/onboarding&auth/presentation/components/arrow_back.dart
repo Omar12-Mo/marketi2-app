@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/core/routes/app_routes.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class ArrowBack extends StatelessWidget {
-  const ArrowBack({
-    super.key,
-  });
-
+   ArrowBack({super.key ,required this.onTap});
+  void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      GestureDetector(
-              onTap: () => Navigator.popAndPushNamed(context, Routes.signIn),
-              child: Image.asset(Assets.iconsBackIcon),
-            ),
-    ],);
+    return Padding(
+      padding: const EdgeInsets.only(left:8.0),
+      child: GestureDetector(
+        onTap:onTap,
+        child: Image.asset(Assets.iconsBackIcon),
+      ),
+    );
   }
 }

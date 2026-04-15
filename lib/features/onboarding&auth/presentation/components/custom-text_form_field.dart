@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class CustomTextFormFiled extends StatefulWidget {
   const CustomTextFormFiled({

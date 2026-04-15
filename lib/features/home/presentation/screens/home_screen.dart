@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:testapp/core/common/widgets/spin_loading.dart';
+import 'package:testapp/core/routes/app_routes.dart';
 import 'package:testapp/core/utils/app_colors.dart';
 import 'package:testapp/core/utils/app_text_style.dart';
 import 'package:testapp/features/cart&checkout/presentation/screens/cart_screen.dart';
@@ -21,7 +22,7 @@ import 'package:testapp/features/home/presentation/widgets/name_of_list.dart';
 import 'package:testapp/features/home/presentation/widgets/product_component.dart';
 import 'package:testapp/features/product%20details/presentation/screens/favorites_screen.dart';
 import 'package:testapp/features/profile&settings/presentation/screens/menu_screen.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -85,7 +86,12 @@ class HomeScreen extends StatelessWidget {
 
                   Gap(14),
 
-                  NameOfList(listName: "Category"),
+                  NameOfList(
+                    listName: "Category",
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.categoriesScreen);
+                    },
+                  ),
 
                   BlocBuilder<GetCategoriesCubit, GetCategoriesState>(
                     builder: (context, state) {
@@ -124,7 +130,12 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   Gap(14),
-                  NameOfList(listName: 'Brands'),
+                  NameOfList(
+                    listName: 'Brands',
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.brandsScreen);
+                    },
+                  ),
 
                   ListOfBrands(),
                 ],
@@ -132,10 +143,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        
       ),
     );
   }
 }
-
-

@@ -9,7 +9,7 @@ import 'package:testapp/core/routes/app_routes.dart';
 import 'package:testapp/core/utils/app_colors.dart';
 import 'package:testapp/features/onboarding&auth/presentation/components/sign_up_component.dart';
 import 'package:testapp/features/onboarding&auth/presentation/cubit/sign_up_cubit.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});

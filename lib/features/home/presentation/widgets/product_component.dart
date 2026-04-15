@@ -5,7 +5,7 @@ import 'package:testapp/core/utils/app_colors.dart';
 import 'package:testapp/core/utils/app_text_style.dart';
 import 'package:testapp/features/home/data/models/product_model.dart';
 import 'package:testapp/features/home/presentation/widgets/add-favourite.dart';
-import 'package:testapp/generated/assets.dart';
+import 'package:testapp/app/generated/assets.dart';
 
 class ProductComponent extends StatelessWidget {
   const ProductComponent({
